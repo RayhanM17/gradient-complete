@@ -1,0 +1,161 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*  make width and height include the padding and border */
+}
+  
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif; /* Set a default font */
+    line-height: 1.6; /* Improve readability */
+    background-color: #f9f9f9; /* Light background for contrast */
+    overflow-x: hidden; /* prevents horizontal scroll */
+}
+
+.container {
+    max-width: 1200px; /* Avoid it being to wide on big screens */
+    width: 100%;
+    margin: 0;
+    padding: 10px 20px;
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* cross-axis alignment (vertical by default in row-based flex layouts) */
+    justify-content: center; /* Main axis alignment*/
+}
+
+h5 {
+    margin-bottom: 1rem;
+}
+
+.box {
+    height: 20rem;
+    width: 20rem;
+    background-color: #000;
+}
+
+.simple-linear {
+    background: linear-gradient(blue, pink);
+}
+
+.horizontal-linear {
+    background: linear-gradient(to right, blue, pink);
+}
+
+.diagonal-linear {
+    background: linear-gradient(to bottom right, blue, pink);
+}
+
+.angled-linear {
+    background: linear-gradient(70deg, blue, pink);
+}
+
+.auto-spaced-linear{
+    background: linear-gradient(pink, purple, blue, pink);
+}
+
+.custom-spaced-linear{
+    background: linear-gradient(to left, pink 28px, blue 90%, purple);
+}
+
+.striped-linear {
+    background: linear-gradient(to bottom left, pink 50%, blue 50%);
+}
+
+.multiposition-stops-1 {
+    background: linear-gradient(
+        to left,
+        pink 20%,
+        blue 25% 45%,
+        purple 50% 75%,
+        pink 80%
+    );
+}
+
+.multiposition-stops-2 {
+    background: linear-gradient(
+        to left,
+        pink 25%,
+        blue 25% 50%,
+        purple 50% 75%,
+        pink 75%
+    );
+}
+
+.progression-linear {
+    background: linear-gradient(to top, pink, 20%, blue);
+}
+
+.layered-image {
+    background: linear-gradient(to bottom, transparent, lightblue),
+    url("faculty.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.stacked-gradients{
+    background: 
+        linear-gradient(
+            213deg,                       /* Angle of the first gradient */
+            rgb(255 0 0 / 80%),         /* Red color with 80% opacity */
+            rgb(255 0 0 / 0%) 70.71% ), /* Transparent red at 70.71% of the gradient's length */
+        linear-gradient(
+            127deg, 
+            rgb(0 255 0 / 80%), 
+            rgb(0 255 0 / 0%) 70.71%),
+        linear-gradient(
+            336deg, 
+            rgb(0 0 255 / 80%), 
+            rgb(0 0 255 / 0%) 70.71%)
+    ;
+}
+
+.blends-linear {
+    background: 
+        linear-gradient(to top, red, blue),
+        linear-gradient(to right, #5500ff, #00ff55);
+    background-blend-mode: screen; /* Lightens the colors by blending the gradients */
+    background-blend-mode: multiply; /* Darkens the result by multiplying the gradient colors */
+    background-blend-mode: overlay;  /* Adds contrast, making darks darker and lights lighter */
+    background-blend-mode: darken; /* Keeps the darker colors from the gradients */
+    background-blend-mode: color-dodge; /* Brightens the colors for a more intense effect */
+    background-blend-mode: color-burn; /* Darkens the colors, increasing contrast */
+    background-blend-mode: difference; /* Subtracts the colors, resulting in high contrast */
+    background-blend-mode: exclusion; /* Similar to 'difference' but with less contrast */
+    background-blend-mode: hue; /* Uses the hue (color tone) of the gradients */
+    background-blend-mode: saturation; /* Uses the saturation (color intensity) of the gradients */
+    background-blend-mode: color; /* Applies the gradients' color to the background */
+    background-blend-mode: luminosity; /* Blends based on the brightness of the gradients */
+}
+
+.repeating-linear {
+    background: repeating-linear-gradient(
+        to bottom, 
+        red 0%, 
+        red 7.69%,  /* Approx. 7 stripes out of 100% (100% / 13) */
+        white 7.69%, 
+        white 15.38% /* 15.38% includes the next white stripe */
+    );
+}
+
+.plaid-linear{
+    background-color: #000;
+    background:
+    repeating-linear-gradient(
+      0,
+      rgb(0 0 0 / 50%) 0 12.5%,
+      rgb(265 77 63 / 65%) 12.5% 25%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgb(0 0 0 / 50%) 0 12.5%,
+      rgb(265 77 63 / 65%) 12.5% 25%
+    );
+}
+
+.animated-linear {
+    background: linear-gradient(300deg,deepskyblue,darkviolet,blue);
+    background-size: 180% 180%;
+    animation: gradient-animation 5s ease infinite;
+}
+
